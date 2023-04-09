@@ -3,9 +3,11 @@ import Link from 'next/link';
 
 const Icons = ({icon}) => {
   return (
-    <div className='my-1 text-2xl '>
+    <div className='my-1 text-2xl'>
         <Link href='/'>
-            <span className='inline-block p-2 text-slate-800 bg-gray-200 rounded-md'>{icon}</span>
+            <span className='icons'>
+              {icon}
+            </span>
         </Link>
     </div>
   )

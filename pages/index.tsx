@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import { Header } from '../components'
+import { Header,RecentOrders,TopCard,BarChart } from '../components'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,9 +21,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className=''>
-        <section>
+        <section className=''>
           <Header/>
-
+          <TopCard/>
+          <div className='block md:flex items-center gap-10 p-5'>
+            <BarChart/>
+            <RecentOrders/>
+          </div>
         </section>
       </main>
     </>
