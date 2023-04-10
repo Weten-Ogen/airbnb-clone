@@ -5,16 +5,28 @@ import { RxSketchLogo } from 'react-icons/rx';
 import Link from 'next/link';
 import stock from '../public/stock.jpg'
 import Image from 'next/image';
-
+import  {BsFillMoonStarsFill ,BsMoonStars} from 'react-icons/bs';
+import { useContext } from 'react';
+import { AppContext } from '../pages/_app';
 
 const SideBar = ({children}) => {
+  const {darkMode,handleColorChange} = useContext(AppContext);
   return (
-    <div className='flex gap-1 bg-white'>
+  
+      <div className='flex gap-1 bg-white'>
       <nav className='sidenav'>
        <div className='flex flex-col items-center '> 
         <div className='flex flex-col gap-6 items-center '>
-            <div className='text-2xl '>
-              <RxSketchLogo className='logo'/>
+            <div className='text-2xl text-gray-800'>
+            <>
+          {darkMode === true ?
+           <BsMoonStars
+           onClick={() => handleColorChange()} 
+           /> : <BsFillMoonStarsFill
+           onClick={() => handleColorChange()}
+           />
+           
+          }</>
              <hr className='text-slate-900 mt-4 mb-2'/>
             </div>
                 {
@@ -41,10 +53,11 @@ const SideBar = ({children}) => {
             />
         </div>
       </nav>
-      <main className='w-full ml-20 bg-gray-100'>
+      <main className='w-full ml-20 bg-gray-100 dark:bg-dark-300'>
         {children}
       </main>
     </div>
+
   )
 }
 
