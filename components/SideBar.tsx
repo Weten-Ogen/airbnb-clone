@@ -23,7 +23,9 @@ const SideBar = ({children}) => {
                         <Icons 
                         key={item.id} 
                         icon={item.icon}
-                        />)}
+                        link={item.link}
+                        />
+                        )}
                     )
                 }
             </div>
