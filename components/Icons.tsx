@@ -1,11 +1,13 @@
 import React from 'react'
 import Link from 'next/link';
 
-const Icons = ({icon}) => {
+const Icons = ({icon,link}) => {
   return (
-    <div className='my-1 text-2xl '>
-        <Link href='/'>
-            <span className='inline-block p-2 text-slate-800 bg-gray-200 rounded-md'>{icon}</span>
+    <div className='my-1 text-2xl'>
+        <Link href={link}>
+            <span className='icons'>
+              {icon}
+            </span>
         </Link>
     </div>
   )
