@@ -34,11 +34,11 @@ type ChartProps = {
   },
 }
 
-const BarChart = () => {
-  const [chartData, setChartData] = useState<{}>({
+const BarChart:React.FC = () => {
+  const [chartData, setChartData] = useState({
   });
   
-  const [chartOptions, setChartOptions] = useState<{}>({});
+  const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
     setChartData({
