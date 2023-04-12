@@ -23,10 +23,10 @@ chartJs.register(
 
 
 const BarChart = () => {
-  const [chartData, setChartData] = useState({
+  const [chartData, setChartData] = useState<{}>({
     datasets:[],
   });
-  const [chartOptions, setChartOptions] = useState({});
+  const [chartOptions, setChartOptions] = useState<{}>({});
 
   useEffect(() => {
     setChartData({
