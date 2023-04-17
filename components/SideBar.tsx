@@ -8,8 +8,13 @@ import Image from 'next/image';
 import  {BsFillMoonStarsFill ,BsMoonStars} from 'react-icons/bs';
 import { useContext } from 'react';
 import { AppContext } from '../pages/_app';
+import JSXStyle from 'styled-jsx/style';
 
-const SideBar = ({children}) => {
+type ChildrenProps ={
+  children:React.ReactNode
+}
+
+const SideBar = ({children }:ChildrenProps) => {
   const {darkMode,handleColorChange} = useContext(AppContext);
   return (
   

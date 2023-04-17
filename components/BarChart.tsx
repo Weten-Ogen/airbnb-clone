@@ -1,3 +1,5 @@
+"use client"
+
 import React,{useState,useEffect} from 'react';
 import {Bar} from 'react-chartjs-2';
 import {
@@ -20,6 +22,17 @@ chartJs.register(
     Title,
     Legend
 );
+
+type ChartProps = {
+  labels:string[],
+  datasets:{
+    label:string,
+    data: number[],
+    borderColor:string,
+    backgroundColor:string,
+
+  },
+}
 
 
 const BarChart = () => {
