@@ -6,16 +6,15 @@ import Link from 'next/link';
 import stock from '../public/stock.jpg'
 import Image from 'next/image';
 import  {BsFillMoonStarsFill ,BsMoonStars} from 'react-icons/bs';
-import { useContext } from 'react';
-import { AppContext } from '../pages/_app';
-import JSXStyle from 'styled-jsx/style';
+import {useState} from 'react'
 
 type ChildrenProps ={
   children:React.ReactNode
 }
 
 const SideBar = ({children }:ChildrenProps) => {
-  const {darkMode,handleColorChange} = useContext(AppContext);
+  const [dark,setDark] = useState(false);
+  
   return (
   
       <div className='flex gap-1 bg-white'>
@@ -24,7 +23,7 @@ const SideBar = ({children }:ChildrenProps) => {
         <div className='flex flex-col gap-6 items-center '>
             <div className='text-2xl text-gray-800'>
             <>
-          {darkMode === true ?
+          {dark ?
            <BsMoonStars
            onClick={() => handleColorChange()} 
            /> : <BsFillMoonStarsFill
